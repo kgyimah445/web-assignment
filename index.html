@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Productivity Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header class="app-header">
+        <h1>Dashboard Hub</h1>
+        <button type="button" id="theme-toggle" aria-pressed="false">Toggle Dark Mode</button>
+    </header>
+
+    <main class="dashboard-grid">
+        <section class="card profile-section">
+            <h2>Welcome back, Student!</h2>
+            <p id="dashboard-status" role="status">No tasks added yet.</p>
+        </section>
+
+        <section class="card form-section">
+            <h2>Add New Task</h2>
+            <form id="task-form" novalidate>
+                <label for="task-name">Task Name</label>
+                <input type="text" id="task-name" placeholder="e.g., Study JavaScript" aria-describedby="error-message" required>
+
+                <label for="task-priority">Priority Level</label>
+                <select id="task-priority">
+                    <option value="low">Low Priority</option>
+                    <option value="medium">Medium Priority</option>
+                    <option value="high">High Priority</option>
+                </select>
+
+                <button type="submit" id="submit-btn">Add Task</button>
+            </form>
+            <p id="error-message" class="error-text" role="alert"></p>
+        </section>
+
+        <section class="card list-section">
+            <h2>My Tasks</h2>
+            <ul id="task-list"></ul>
+        </section>
+    </main>
+</body>
+</html>
